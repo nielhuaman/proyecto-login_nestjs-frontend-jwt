@@ -1,0 +1,15 @@
+<app-menu></app-menu>
+
+<div class="container">
+    <div class="jumbotron">
+        <h1 class="display-4" *ngIf="!nombreUsuario">Hello, world!</h1>
+        <h1 class="display-4" *ngIf="nombreUsuario">Hola, {{nombreUsuario}}</h1>
+        <p class="lead">Sistema de Matrícula para la UNMSM.</p>
+        <hr class="my-4">
+        <p>Servicios:</p>
+        <p>Matricula</p>
+        <p>Matricula Extemporaneo (Manuel)</p>
+        <p>Reserva</p>
+        <a class="btn btn-primary btn-lg" href="#" role="button">Navegar en el sistema</a>
+      </div>
+</div>
