@@ -1,0 +1,39 @@
+<app-menu></app-menu>
+
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-md-4 mx-auto">
+            <form  novalidate #f="ngForm">
+                <div class="form-group">
+                    <label for="nombre">Alumno</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre" required
+                        autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="precio">Profesor</label>
+                    <input type="text" class="form-control" id="precio" name="precio" required
+                        autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="precio">Mombre Curso</label>
+                    <input type="text" class="form-control" id="precio" name="precio" required
+                        autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="precio">Numero Ciclo</label>
+                    <input type="text" class="form-control" id="precio" name="precio" required
+                        autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="precio">Creditos</label>
+                    <input type="text" class="form-control" id="precio" name="precio" required
+                        autocomplete="off">
+                </div>
+                <button type="submit" class="btn btn-outline-success btn-block" [disabled]="!f.valid">
+                    <i class="far fa-plus-square"></i> Crear</button>
+                <button class="btn btn-outline-primary btn-block" (click)="volver()"><i
+                        class="fas fa-arrow-alt-circle-left"></i> Volver</button>
+            </form>
+        </div>
+    </div>
+</div>

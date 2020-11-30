@@ -20,7 +20,9 @@ import { RegistroComponent } from './auth/registro.component';
 // external
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
-
+import { CursosComponent } from './cursos/cursos.component';
+import { NuevoCursoComponent } from './cursos/nuevo-curso.component';
+import { ListarCursoComponent } from './cursos/listar-curso.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,10 @@ import { ToastrModule } from 'ngx-toastr';
     HomeComponent,
     MenuComponent,
     LoginComponent,
-    RegistroComponent
+    RegistroComponent,
+    CursosComponent,
+    NuevoCursoComponent,
+    ListarCursoComponent
   ],
   imports: [
     BrowserModule,

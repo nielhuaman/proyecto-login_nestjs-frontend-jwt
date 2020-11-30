@@ -1,25 +1,58 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
-    <a class="navbar-brand" href="#">Proyecto NestJS</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-            <a class="nav-link" routerLink="/"><i class="fas fa-home"></i> Inicio</a>
-          </li>
-       
-        <li class="nav-item" *ngIf="isLogged">
-          <a class="nav-link" routerLink="/lista"><i class="far fa-list-alt"></i> Lista</a>
+  <a class="navbar-brand" href="#">Proyecto NestJS</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+          <a class="nav-link" routerLink="/"><i class="fas fa-home"></i> Inicio</a>
         </li>
-        <li class="nav-item" *ngIf="isAdmin">
-          <a class="nav-link"  routerLink="/nuevo"><i class="fas fa-plus-circle"></i> Nuevo Producto</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Usuario
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" [routerLink]="['user/create']">Crear usuario</a>
+            <a class="dropdown-item" [routerLink]="['user']">Listar usuarios</a>
+            <a class="dropdown-item" [routerLink]="['user/edit']">Actualizar usuario</a>
+            <a class="dropdown-item" [routerLink]="['user/delete']">Eliminar usuario</a>
+          </div>
         </li>
-        
-      </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <button class="btn btn-outline-success" routerLink="/login" *ngIf="!isLogged"><i class="fas fa-sign-in-alt"></i> Iniciar Sesión</button>
-        <button class="btn btn-outline-danger" *ngIf="isLogged" (click)="logOut()"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</button>
-      </form>
-    </div>
-  </nav>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Cursos
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" [routerLink]="['nuevo-curso']">Crear curso</a>
+          <a class="dropdown-item" [routerLink]="['curso-lista']">Listar cursos</a>
+          <a class="dropdown-item" >Actualizar cursos</a>
+          <a class="dropdown-item" >Eliminar cursos</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Matrícula
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" [routerLink]="['enrollment/create']">Crear matrícula</a>
+          <a class="dropdown-item" [routerLink]="['enrollment']">Listar matrícula</a>
+          <a class="dropdown-item" [routerLink]="['enrollment/edit']">Actualizar matrícula</a>
+          <a class="dropdown-item" [routerLink]="['enrollment/delete']">Eliminar matrícula</a>
+        </div>
+      </li>
+      <li class="nav-item" *ngIf="isLogged">
+        <a class="nav-link" routerLink="/lista"><i class="far fa-list-alt"></i> Lista</a>
+      </li>
+      <li class="nav-item" *ngIf="isAdmin">
+        <a class="nav-link"  routerLink="/nuevo"><i class="fas fa-plus-circle"></i> Nuevo Producto</a>
+      </li>
+      
+   
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <button class="btn btn-outline-success" routerLink="/login" *ngIf="!isLogged"><i class="fas fa-sign-in-alt"></i> Iniciar Sesión</button>
+      <button class="btn btn-outline-danger" *ngIf="isLogged" (click)="logOut()"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</button>
+    </form>
+  </div>
+</nav>
