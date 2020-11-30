@@ -5,8 +5,9 @@
         <thead>
           <tr>
             <th scope="col">#</th>
-            <th scope="col">Codigo Curso</th>
-            <th scope="col">Profesor</th>
+            <th scope="col">Codigo</th>
+            <th scope="col">Codigo Profesor</th>
+            <th scope="col">Nombre</th>
             <th scope="col">Curso</th>
             <th scope="col">N° Ciclo</th>
             <th scope="col">Creditos</th>
@@ -17,6 +18,8 @@
         <tbody>
           <tr *ngFor="let curso of cursos">
             <td>{{curso.id}}</td>
+            <td>{{curso.codigo}}</td>
+            <td>{{curso.codigo_profesor}}</td>
             <td>{{curso.nombre}}</td>
             <td>{{curso.curso}}</td>
             <td>{{curso.numero_ciclo}}</td>
