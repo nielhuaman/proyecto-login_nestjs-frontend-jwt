@@ -16,6 +16,8 @@ export class CursoService {
     return this.httpClient.get<Curso[]>(`${this.cursoURL}`);
   }
 
-  
+  public save(curso: Curso): Observable<any> {
+    return this.httpClient.post<any>(`${this.cursoURL}`, curso);
+  }
   
 }

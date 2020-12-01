@@ -3,30 +3,35 @@
 <div class="container">
     <div class="row mt-5">
         <div class="col-md-4 mx-auto">
-            <form  novalidate #f="ngForm">
+            <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
                 <div class="form-group">
-                    <label for="nombre">Alumno</label>
-                    <input type="text" class="form-control" id="nombre" name="nombre" required
+                    <label >Codigo</label>
+                    <input type="text" class="form-control" id="codigo" name="codigo" [(ngModel)]="codigo" required
                         autocomplete="off">
                 </div>
                 <div class="form-group">
-                    <label for="precio">Profesor</label>
-                    <input type="text" class="form-control" id="precio" name="precio" required
+                    <label for="nombre">Codigo Profesor</label>
+                    <input type="text" class="form-control" id="codigo_profesor" name="codigo_profesor" [(ngModel)]="codigo_profesor" required
                         autocomplete="off">
                 </div>
                 <div class="form-group">
-                    <label for="precio">Mombre Curso</label>
-                    <input type="text" class="form-control" id="precio" name="precio" required
+                    <label >Profesor</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="nombre" required
                         autocomplete="off">
                 </div>
                 <div class="form-group">
-                    <label for="precio">Numero Ciclo</label>
-                    <input type="text" class="form-control" id="precio" name="precio" required
+                    <label >Mombre Curso</label>
+                    <input type="text" class="form-control" id="curso" name="curso" [(ngModel)]="curso" required
                         autocomplete="off">
                 </div>
                 <div class="form-group">
-                    <label for="precio">Creditos</label>
-                    <input type="text" class="form-control" id="precio" name="precio" required
+                    <label >Numero Ciclo</label>
+                    <input type="text" class="form-control" id="numero_ciclo" name="numero_ciclo" [(ngModel)]="numero_ciclo" required
+                        autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label >Creditos</label>
+                    <input type="text" class="form-control" id="creditos" name="creditos" [(ngModel)]="creditos" required
                         autocomplete="off">
                 </div>
                 <button type="submit" class="btn btn-outline-success btn-block" [disabled]="!f.valid">

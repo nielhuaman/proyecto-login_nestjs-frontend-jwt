@@ -24,6 +24,7 @@ import { CursosComponent } from './cursos/cursos.component';
 import { NuevoCursoComponent } from './cursos/nuevo-curso.component';
 import { ListarCursoComponent } from './cursos/listar-curso.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
