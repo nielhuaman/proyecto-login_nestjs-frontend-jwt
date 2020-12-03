@@ -16,8 +16,19 @@ export class CursoService {
     return this.httpClient.get<Curso[]>(`${this.cursoURL}`);
   }
 
+  public detail(id: number): Observable<Curso> {
+    return this.httpClient.get<Curso>(`${this.cursoURL}${id}`);
+  }
+
   public save(curso: Curso): Observable<any> {
     return this.httpClient.post<any>(`${this.cursoURL}`, curso);
   }
   
+  public update(id: number, curso: Curso): Observable<any> {
+    return this.httpClient.put<any>(`${this.cursoURL}${id}`, curso);
+  }
+
+  public delete(id: number): Observable<any> {
+    return this.httpClient.delete<any>(`${this.cursoURL}${id}`);
+  }
 }

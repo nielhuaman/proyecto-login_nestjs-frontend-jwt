@@ -11,6 +11,9 @@ import { NuevoProductoComponent } from './producto/nuevo-producto.component';
 import { EditarProductoComponent } from './producto/editar-producto.component';
 import { NuevoCursoComponent } from './cursos/nuevo-curso.component';
 import { ListarCursoComponent } from './cursos/listar-curso.component';
+import { EditarCursoComponent } from './cursos/editar-curso.component';
+import { VerCursoComponent } from './cursos/ver-curso.component';
+
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -22,6 +25,8 @@ const routes: Routes = [
   {path: 'registro', component: RegistroComponent, canActivate: [LoginGuard]},
   {path: 'nuevo-curso', component: NuevoCursoComponent, canActivate: [ProductoGuard], data: {expectedRol: ['admin']}},
   {path: 'curso-lista', component: ListarCursoComponent, canActivate: [ProductoGuard], data: {expectedRol: ['admin']}},
+  {path: 'curso/:id', component: EditarCursoComponent, canActivate: [ProductoGuard], data: {expectedRol: ['admin']}},
+  {path: 'curso-ver/:id', component: VerCursoComponent, canActivate: [ProductoGuard], data: {expectedRol: ['admin']}},
   {path: '**', redirectTo: '', pathMatch: 'full'}
 ];
 

@@ -23,9 +23,14 @@ import { ToastrModule } from 'ngx-toastr';
 import { CursosComponent } from './cursos/cursos.component';
 import { NuevoCursoComponent } from './cursos/nuevo-curso.component';
 import { ListarCursoComponent } from './cursos/listar-curso.component';
+<<<<<<< HEAD
 import { AuthenticationComponent } from './layouts/authentication/authentication.component';
 import { DashboardComponent } from './layouts/dashboard/dashboard.component';
 import { WelcomeComponent } from './layouts/welcome/welcome.component';
+=======
+import { EditarCursoComponent } from './cursos/editar-curso.component';
+import { VerCursoComponent } from './cursos/ver-curso.component';
+>>>>>>> 682ac136640915a75f796b01927730be8cd82b29
 
 
 @NgModule({
@@ -42,9 +47,14 @@ import { WelcomeComponent } from './layouts/welcome/welcome.component';
     CursosComponent,
     NuevoCursoComponent,
     ListarCursoComponent,
+<<<<<<< HEAD
     AuthenticationComponent,
     DashboardComponent,
     WelcomeComponent
+=======
+    EditarCursoComponent,
+    VerCursoComponent
+>>>>>>> 682ac136640915a75f796b01927730be8cd82b29
   ],
   imports: [
     BrowserModule,

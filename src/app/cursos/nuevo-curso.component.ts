@@ -51,6 +51,6 @@ this.creditos);
   }
 
   volver(): void {
-    this.router.navigate(['/lista']);
+    this.router.navigate(['/curso-lista']);
   }
 }
