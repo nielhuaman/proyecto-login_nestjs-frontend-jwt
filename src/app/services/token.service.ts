@@ -19,7 +19,8 @@ export class TokenService {
   }
 
   getToken(): string {
-    return localStorage.getItem('token');
+    const aux = localStorage.getItem('token');
+    return (aux === null) ? '' : aux;
   }
 
   getNombreUsuario(): string {

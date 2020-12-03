@@ -23,6 +23,9 @@ import { ToastrModule } from 'ngx-toastr';
 import { CursosComponent } from './cursos/cursos.component';
 import { NuevoCursoComponent } from './cursos/nuevo-curso.component';
 import { ListarCursoComponent } from './cursos/listar-curso.component';
+import { AuthenticationComponent } from './layouts/authentication/authentication.component';
+import { DashboardComponent } from './layouts/dashboard/dashboard.component';
+import { WelcomeComponent } from './layouts/welcome/welcome.component';
 
 
 @NgModule({
@@ -38,7 +41,10 @@ import { ListarCursoComponent } from './cursos/listar-curso.component';
     RegistroComponent,
     CursosComponent,
     NuevoCursoComponent,
-    ListarCursoComponent
+    ListarCursoComponent,
+    AuthenticationComponent,
+    DashboardComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,

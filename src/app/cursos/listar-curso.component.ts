@@ -15,14 +15,16 @@ export class ListarCursoComponent implements OnInit {
   constructor(
     private cursoService: CursoService,
     private tokenService: TokenService
-  ) {}
-
-  ngOnInit(): void {
-    this.cargarCursos();
+  ) {
     this.isAdmin = this.tokenService.isAdmin();
   }
 
-  
+  ngOnInit(): void {
+    this.cargarCursos();
+    //this.isAdmin = this.tokenService.isAdmin();
+  }
+
+
   cargarCursos(): void {
     this.cursoService.listacurso().subscribe(
       data => {

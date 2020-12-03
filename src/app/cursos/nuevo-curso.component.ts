@@ -12,24 +12,28 @@ import { ToastrService } from 'ngx-toastr';
 export class NuevoCursoComponent implements OnInit {
 
   codigo = '';
-  codigo_profesor: number = null;
+  codigoProfesor: number;
   nombre = '';
   curso = '';
-  numero_ciclo: number = null;
-  creditos: number = null;
+  numeroCiclo: number;
+  creditos: number;
 
   constructor(
 
     private cursoService: CursoService,
     private toastr: ToastrService,
     private router: Router
-  ) { }
+  ) {
+    this.codigoProfesor = 0;
+    this.numeroCiclo = 0;
+    this.creditos = 0;
+  }
 
   ngOnInit(): void {
   }
 
   onCreate(): void {
-    const curso = new Curso(this.codigo, this.codigo_profesor,this.nombre, this.curso, this.numero_ciclo,
+    const curso = new Curso(this.codigo, this.codigoProfesor,this.nombre, this.curso, this.numeroCiclo,
 this.creditos);
     this.cursoService.save(curso).subscribe(
       data => {

@@ -11,16 +11,14 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class EditarProductoComponent implements OnInit {
 
-  producto: Producto = null;
+  producto: Producto;
 
   constructor(
     private productoService: ProductoService,
     private activatedRoute: ActivatedRoute,
     private toastr: ToastrService,
     private router: Router
-  ) { }
-
-  ngOnInit(): void {
+  ) {
     const id = this.activatedRoute.snapshot.params.id;
     this.productoService.detail(id).subscribe(
       data => {
@@ -33,6 +31,9 @@ export class EditarProductoComponent implements OnInit {
         this.volver();
       }
     );
+  }
+
+  ngOnInit(): void {
   }
 
   onUpdate(): void {

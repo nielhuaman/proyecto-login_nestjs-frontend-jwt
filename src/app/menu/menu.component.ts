@@ -16,11 +16,14 @@ export class MenuComponent implements OnInit {
   constructor(
     private tokenService: TokenService,
     private router: Router
-  ) { }
-
-  ngOnInit(): void {
+  ) {
     this.isLogged = this.tokenService.isLogged();
     this.isAdmin = this.tokenService.isAdmin();
+  }
+
+  ngOnInit(): void {
+    //this.isLogged = this.tokenService.isLogged();
+    //this.isAdmin = this.tokenService.isAdmin();
   }
 
   logOut(): void {
