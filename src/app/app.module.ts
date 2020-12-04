@@ -28,6 +28,11 @@ import { DashboardComponent } from './layouts/dashboard/dashboard.component';
 import { WelcomeComponent } from './layouts/welcome/welcome.component';
 import { EditarCursoComponent } from './cursos/editar-curso.component';
 import { VerCursoComponent } from './cursos/ver-curso.component';
+import { EditarMatriculaComponent } from './matricula/editar-matricula/editar-matricula.component';
+import { CreateMatriculaComponent } from './matricula/create-matricula/create-matricula.component';
+import { ListarMatriculaComponent } from './matricula/listar-matricula/listar-matricula.component';
+import { EliminarMatriculaComponent } from './matricula/eliminar-matricula/eliminar-matricula.component';
+import { DetalleMatriculaComponent } from './matricula/detalle-matricula/detalle-matricula.component';
 
 
 @NgModule({
@@ -48,7 +53,12 @@ import { VerCursoComponent } from './cursos/ver-curso.component';
     DashboardComponent,
     WelcomeComponent,
     EditarCursoComponent,
-    VerCursoComponent
+    VerCursoComponent,
+    EditarMatriculaComponent,
+    CreateMatriculaComponent,
+    ListarMatriculaComponent,
+    EliminarMatriculaComponent,
+    DetalleMatriculaComponent
   ],
   imports: [
     BrowserModule,

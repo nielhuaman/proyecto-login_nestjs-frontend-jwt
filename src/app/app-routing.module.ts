@@ -13,6 +13,11 @@ import { NuevoCursoComponent } from './cursos/nuevo-curso.component';
 import { ListarCursoComponent } from './cursos/listar-curso.component';
 import { EditarCursoComponent } from './cursos/editar-curso.component';
 import { VerCursoComponent } from './cursos/ver-curso.component';
+import { CreateMatriculaComponent } from './matricula/create-matricula/create-matricula.component';
+import { EditarMatriculaComponent } from './matricula/editar-matricula/editar-matricula.component';
+import { EliminarMatriculaComponent } from './matricula/eliminar-matricula/eliminar-matricula.component';
+import { ListarMatriculaComponent } from './matricula/listar-matricula/listar-matricula.component';
+import { DetalleMatriculaComponent } from './matricula/detalle-matricula/detalle-matricula.component';
 
 
 const routes: Routes = [
@@ -27,6 +32,11 @@ const routes: Routes = [
   {path: 'curso-lista', component: ListarCursoComponent, canActivate: [ProductoGuard], data: {expectedRol: ['admin']}},
   {path: 'curso/:id', component: EditarCursoComponent, canActivate: [ProductoGuard], data: {expectedRol: ['admin']}},
   {path: 'curso-ver/:id', component: VerCursoComponent, canActivate: [ProductoGuard], data: {expectedRol: ['admin']}},
+  {path: 'enrollment/create', component:CreateMatriculaComponent},
+  {path: 'enrollment/edit/:id', component:EditarMatriculaComponent},
+  {path: 'enrollment/delete', component:EliminarMatriculaComponent},
+  {path: 'enrollment', component:ListarMatriculaComponent},
+  {path: 'enrollment/:id', component:DetalleMatriculaComponent},
   {path: '**', redirectTo: '', pathMatch: 'full'}
 ];
 

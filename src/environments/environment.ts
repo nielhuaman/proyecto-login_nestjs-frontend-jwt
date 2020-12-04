@@ -6,7 +6,8 @@ export const environment = {
   production: false,
   cursoURL: 'http://localhost:8080/cursos/',
   productoURL: 'http://localhost:8080/producto/',
-  authURL: 'http://localhost:8080/auth/'
+  authURL: 'http://localhost:8080/auth/',
+  matriculaURL: 'http://localhost:3000/enrollments',
 };
 
 /*
