@@ -11,7 +11,7 @@ import { Producto } from '../models/producto';
 })
 export class DetalleProductoComponent implements OnInit {
 
-  producto: Producto = null;
+  producto!: Producto;
 
   constructor(
     private productoService: ProductoService,

@@ -13,7 +13,9 @@ export class ProductoGuard implements CanActivate {
   constructor(
     private tokenService: TokenService,
     private router: Router
-  ) { }
+  ) {
+    this.realRol='';
+  }
 
   canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
     const expectedRol = next.data.expectedRol;

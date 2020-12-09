@@ -12,13 +12,15 @@ import { Router } from '@angular/router';
 export class NuevoProductoComponent implements OnInit {
 
   nombre = '';
-  precio: number = null;
+  precio: number;
 
   constructor(
     private productoService: ProductoService,
     private toastr: ToastrService,
     private router: Router
-    ) { }
+    ) {
+      this.precio=0;
+     }
 
   ngOnInit(): void {
   }

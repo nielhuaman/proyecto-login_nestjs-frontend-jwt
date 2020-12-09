@@ -10,7 +10,7 @@ import { MatriculaService } from 'src/app/services/matricula.service';
   styleUrls: ['./detalle-matricula.component.css']
 })
 export class DetalleMatriculaComponent implements OnInit {
-  matricula: Matricula=null;
+  matricula!: Matricula;
   constructor(  private  matriculaService: MatriculaService,
     private activatedRoute: ActivatedRoute,
     private toastr: ToastrService,

@@ -11,7 +11,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class EditarProductoComponent implements OnInit {
 
-  producto: Producto;
+  producto!: Producto;
 
   constructor(
     private productoService: ProductoService,

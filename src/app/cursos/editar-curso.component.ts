@@ -11,7 +11,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class EditarCursoComponent implements OnInit {
 
-  curso: Curso = null;
+  curso!: Curso;
 
 
   constructor(

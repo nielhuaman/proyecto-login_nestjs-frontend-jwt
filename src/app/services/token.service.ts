@@ -25,7 +25,7 @@ export class TokenService {
 
   getNombreUsuario(): string {
     if (!this.isLogged()) {
-      return null;
+      return '';
     }
     const token = this.getToken();
     const payload = token.split('.')[1];
@@ -37,7 +37,7 @@ export class TokenService {
 
   isAdmin(): boolean {
     if (!this.isLogged()) {
-      return null;
+      return false;
     }
     const token = this.getToken();
     const payload = token.split('.')[1];

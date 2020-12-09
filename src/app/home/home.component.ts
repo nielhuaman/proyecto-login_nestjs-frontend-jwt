@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  nombreUsuario: string;
+  nombreUsuario!: string;
 
   constructor(
     private tokenService: TokenService

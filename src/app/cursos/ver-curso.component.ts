@@ -12,7 +12,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class VerCursoComponent implements OnInit {
 
-  curso: Curso = null;
+  curso!: Curso;
 
   constructor(
     private cursoService: CursoService,
@@ -36,7 +36,7 @@ export class VerCursoComponent implements OnInit {
     );
   }
 
-  
+
   volver(): void {
     this.router.navigate(['/curso-lista']);
   }

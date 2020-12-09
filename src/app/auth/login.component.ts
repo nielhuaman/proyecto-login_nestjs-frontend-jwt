@@ -12,10 +12,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  usuario: LoginUsuarioDto = null;
+  usuario!: LoginUsuarioDto;
 
-  nombreUsuario: string;
-  password: string;
+  nombreUsuario!: string;
+  password!: string;
 
   constructor(
     private authService: AuthService,

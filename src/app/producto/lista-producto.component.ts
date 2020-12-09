@@ -16,7 +16,7 @@ export class ListaProductoComponent implements OnInit {
 
   listaVacia = undefined;
 
-  isAdmin: boolean;
+  isAdmin!: boolean;
 
   constructor(
     private productoService: ProductoService,

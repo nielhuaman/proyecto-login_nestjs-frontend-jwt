@@ -11,18 +11,20 @@ import { Router } from '@angular/router';
 })
 export class RegistroComponent implements OnInit {
 
-  usuario: NuevoUsuarioDto = null;
+  usuario?: NuevoUsuarioDto;
 
-  nombre: string;
-  nombreUsuario: string;
-  email: string;
-  password: string;
+  nombre!: string;
+  nombreUsuario!: string;
+  email!: string;
+  password!: string;
 
   constructor(
     private authService: AuthService,
     private toastrService: ToastrService,
     private router: Router
-  ) { }
+  ) {
+    //this.usuario=null;
+   }
 
   ngOnInit(): void {
   }

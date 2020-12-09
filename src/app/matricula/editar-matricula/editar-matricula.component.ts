@@ -10,7 +10,7 @@ import { MatriculaService } from 'src/app/services/matricula.service';
   styleUrls: ['./editar-matricula.component.css']
 })
 export class EditarMatriculaComponent implements OnInit {
-  matricula: Matricula = null;
+  matricula!: Matricula;
   constructor( private matriculaService: MatriculaService,
     private activatedRoute: ActivatedRoute,
     private toastr: ToastrService,
