@@ -1,1 +1,23 @@
-<p>welcome works!</p>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDashboard" aria-controls="navbarTogglerDashboard" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDashboard">
+        <a class="navbar-brand" href="#">UNMSM</a>
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+                <a class="nav-link" [routerLink]="['/']">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/about']">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/contacts']">Contacts</a>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a [routerLink]="['/auth']"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        </ul>
+    </div>
+</nav>
+<router-outlet></router-outlet>

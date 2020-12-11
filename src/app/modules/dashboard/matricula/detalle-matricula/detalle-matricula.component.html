@@ -1,0 +1,24 @@
+<!-- <app-menu></app-menu> -->
+
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-md-4 mx-auto">
+            <div class="card" style="width: 18rem;">
+                <div class="card-header text-center">
+                    Detalle Matricula
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><b>ID: </b>{{matricula.id}}</li>
+                    <li class="list-group-item"><b>Código alumno: </b>{{matricula.codalumno}}</li>
+                    <li class="list-group-item"><b>Fecha y hora del registro: </b>{{matricula.fechahora_registro}}</li>
+                    <li class="list-group-item"><b>Periodo académico: </b>{{matricula.periodo_academico}}</li>
+                </ul>
+                <div class="card-footer">
+                    <button class="btn btn-outline-primary btn-block" (click)="volver()"><i
+                            class="fas fa-arrow-alt-circle-left"></i> Volver</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

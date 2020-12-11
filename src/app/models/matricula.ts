@@ -1,5 +1,5 @@
 export class Matricula {
-    id?: number;
+    id!: number;
     codalumno: string;
     fechahora_registro: string;
     periodo_academico: string;
