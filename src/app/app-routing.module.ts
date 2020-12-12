@@ -22,6 +22,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { WelcomeComponent } from './layouts/welcome/welcome.component';
 import { AuthenticationComponent } from './layouts/authentication/authentication.component';
 import { DashboardComponent } from './layouts/dashboard/dashboard.component';
+import { AuthenticationGuard } from './core/guards/authentication.guard';
 
 
 const routes: Routes = [
@@ -48,6 +49,11 @@ const routes: Routes = [
     loadChildren: () => import('./modules/welcome/welcome.module').then(m => m.WelcomeModule)
   },
   {
+    path: 'welcome',
+    component: WelcomeComponent,
+    loadChildren: () => import('./modules/welcome/welcome.module').then(m => m.WelcomeModule)
+  },
+  {
     path: 'auth',
     component: AuthenticationComponent,
     loadChildren: () => import('./modules/authentication/authentication.module').then(m => m.AuthenticationModule)
@@ -55,6 +61,7 @@ const routes: Routes = [
   {
     path: 'dashboard',
     component: DashboardComponent,
+    canActivate: [AuthenticationGuard],
     loadChildren: () => import('./modules/dashboard/dashboard.module').then(m => m.DashboardModule)
   }
 ];

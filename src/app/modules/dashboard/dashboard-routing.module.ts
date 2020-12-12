@@ -1,31 +1,39 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './home/home.component';
+import { PrincipalComponent } from './principal/principal.component';
 
 const routes: Routes = [
   {
-    path:'',
-    component:HomeComponent
+    path: '',
+    component: PrincipalComponent
   },
   {
-    path:'course',
-    loadChildren:()=>import('./course/course.module').then(m=>m.CourseModule)
+    path: 'principal',
+    component: PrincipalComponent
   },
   {
-    path:'enrollment',
-    loadChildren:()=>import('./enrollment/enrollment.module').then(m=>m.EnrollmentModule)
+    path: 'course',
+    loadChildren: () => import('./course/course.module').then(m => m.CourseModule)
   },
   {
-    path:'producto',
-    loadChildren:()=>import('./producto/producto.module').then(m=>m.ProductoModule)
+    path: 'enrollment',
+    loadChildren: () => import('./enrollment/enrollment.module').then(m => m.EnrollmentModule)
   },
   {
-    path:'user',
-    loadChildren:()=>import('./user/user.module').then(m=>m.UserModule)
+    path: 'producto',
+    loadChildren: () => import('./producto/producto.module').then(m => m.ProductoModule)
   },
   {
-    path:'matricula',
-    loadChildren:()=>import('./matricula/matricula.module').then(m=>m.MatriculaModule)
+    path: 'user',
+    loadChildren: () => import('./user/user.module').then(m => m.UserModule)
+  },
+  {
+    path: 'matricula',
+    loadChildren: () => import('./matricula/matricula.module').then(m => m.MatriculaModule)
+  },
+  {
+    path: '**',
+    redirectTo: 'principal'
   }
 ];
 

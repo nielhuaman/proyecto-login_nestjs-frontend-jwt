@@ -1,1 +1,51 @@
-<p>register works!</p>
+<div class="register-box">
+    <div class="register-logo">
+        <a href="#"><b>Registro</b>UNMSM</a>
+    </div>
+
+    <div class="card">
+        <div class="card-body register-card-body">
+            <p class="login-box-msg">Registro de nuevo miembro</p>
+
+            <form role="form" (ngSubmit)="registro(registroForm)" #registroForm="ngForm">
+                <div class="input-group mb-3">
+                    <input type="email" class="form-control" id="email" name="email" [(ngModel)]="usuario.email" required email placeholder="Email">
+                    <div class="input-group-append">
+                        <div class="input-group-text">
+                            <span class="fas fa-envelope"></span>
+                        </div>
+                    </div>
+                    <label *ngIf="registroForm.submitted && registroForm.controls['email'].invalid" for="email" class="col-form-label text-danger"><i class="far fa-times-circle"></i></label>
+                </div>
+                <div class="input-group mb-3">
+                    <input type="password" class="form-control" id="password" name="password" [(ngModel)]="usuario.password" required placeholder="Password">
+                    <div class="input-group-append">
+                        <div class="input-group-text">
+                            <span class="fas fa-lock"></span>
+                        </div>
+                    </div>
+                    <label *ngIf="registroForm.submitted && registroForm.controls['password'].invalid" for="password" class="col-form-label text-danger"><i class="far fa-times-circle"></i></label>
+                </div>
+                <div class="row">
+                    <div class="col-8">
+                        <div class="icheck-primary">
+                            <input [(ngModel)]="recordarme" type="checkbox" id="agreeTerms" name="terms" value="agree">
+                            <label for="agreeTerms">
+               Recordar mi usuario
+              </label>
+                        </div>
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-4">
+                        <button type="submit" class="btn btn-primary btn-block">Register</button>
+                    </div>
+                    <!-- /.col -->
+                </div>
+            </form>
+
+            <a [routerLink]="['/auth/login']" class="text-center"> ¿Ya tienes cuenta? / Ingresar</a>
+        </div>
+        <!-- /.form-box -->
+    </div>
+    <!-- /.card -->
+</div>

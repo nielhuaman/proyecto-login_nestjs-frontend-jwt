@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { LoginUsuarioDto } from '../../../core/models/login-usuario.dto';
+import { NgForm } from '@angular/forms';
+import { AuthenticationService } from '../../../core/services/authentication/authentication.service';
+
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -8,13 +13,49 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private router:Router) { }
+  usuario: LoginUsuarioDto;
+  recordarme = false;
 
-  ngOnInit(): void {
+  constructor(private router: Router, private auth: AuthenticationService) {
+    this.usuario = new LoginUsuarioDto();
   }
 
-  login() {
-    this.router.navigate(['dashboard']);
+
+  ngOnInit(): void {
+
+    if (localStorage.getItem('email')) {
+      this.usuario.email = localStorage.getItem('email');
+      this.recordarme = true;
+    }
+  }
+
+  login(form: NgForm): void {
+    if (form.invalid) { return; }
+
+
+    Swal.fire({
+      allowOutsideClick: false,
+      title: 'Cargando',
+      text: 'Espere por favor ...',
+      icon: 'info'
+    });
+    Swal.showLoading();
+
+    this.auth.login(this.usuario)
+      .subscribe(resp => {
+        Swal.close();
+        if (this.recordarme) {
+          localStorage.setItem('email', this.usuario.email);
+        }
+        this.router.navigate(['dashboard']);
+      }, (err) => {
+        console.log(err.error.error.message);
+        Swal.fire({
+          title: 'Error al autenticar!',
+          text: err.error.error.message,
+          icon: 'error'
+        });
+      });
   }
 
 }
