@@ -1,26 +1,31 @@
-import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { CursoService } from '../../../../services/curso.service';
+import { Curso } from '../../../../models/curso';
 import { ToastrService } from 'ngx-toastr';
-import { Matricula } from 'src/app/models/matricula';
-import { MatriculaService } from 'src/app/services/matricula.service';
 
 @Component({
-  selector: 'app-editar-matricula',
-  templateUrl: './editar-matricula.component.html',
-  styleUrls: ['./editar-matricula.component.css']
+  selector: 'app-editar-curso',
+  templateUrl: './editar-curso.component.html',
+  styleUrls: ['./editar-curso.component.css']
 })
-export class EditarMatriculaComponent implements OnInit {
-  matricula!: Matricula;
-  // constructor( private matriculaService: MatriculaService,
+export class EditarCursoComponent implements OnInit {
+
+  //curso: Curso;
+
+
+  // constructor(
+  //   private cursoService: CursoService,
   //   private activatedRoute: ActivatedRoute,
   //   private toastr: ToastrService,
-  //   private router: Router) { }
+  //   private router: Router
+  // ) { }
 
   ngOnInit(): void {
     // const id = this.activatedRoute.snapshot.params.id;
-    // this.matriculaService.detail(id).subscribe(
+    // this.cursoService.detail(id).subscribe(
     //   data => {
-    //     this.matricula = data;
+    //     this.curso = data;
     //   },
     //   err => {
     //     this.toastr.error(err.error.message, 'Fail', {
@@ -30,9 +35,10 @@ export class EditarMatriculaComponent implements OnInit {
     //   }
     // );
   }
+
   onUpdate(): void {
     // const id = this.activatedRoute.snapshot.params.id;
-    // this.matriculaService.update(id, this.matricula).subscribe(
+    // this.cursoService.update(id, this.curso).subscribe(
     //   data => {
     //     this.toastr.success(data.message, 'OK', {
     //       timeOut: 3000, positionClass: 'toast-top-center'
@@ -48,6 +54,8 @@ export class EditarMatriculaComponent implements OnInit {
   }
 
   volver(): void {
-    // this.router.navigate(['/enrollment']);
+    // this.router.navigate(['/curso-lista']);
   }
+
+
 }

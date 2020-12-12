@@ -8,28 +8,32 @@ import { ListarMatriculaComponent } from './listar-matricula/listar-matricula.co
 
 const routes: Routes = [
   {
-    path:'',
-    component:ListarMatriculaComponent
+    path: '',
+    component: ListarMatriculaComponent
   },
   {
-    path:'nuevo',
-    component:CreateMatriculaComponent
+    path: 'new',
+    component: CreateMatriculaComponent
   },
   {
-    path:'detalle',
-    component:DetalleMatriculaComponent
+    path: 'detail',
+    component: DetalleMatriculaComponent
   },
   {
-    path:'editar',
-    component:EditarMatriculaComponent
+    path: 'edit',
+    component: EditarMatriculaComponent
   },
   {
-    path:'eliminar',
-    component:EliminarMatriculaComponent
+    path: 'delete',
+    component: EliminarMatriculaComponent
   },
   {
-    path:'listar',
-    component:ListarMatriculaComponent
+    path: 'list',
+    component: ListarMatriculaComponent
+  },
+  {
+    path: '**',
+    redirectTo: 'list'
   }
 ];
 

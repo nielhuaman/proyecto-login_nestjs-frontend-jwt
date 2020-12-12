@@ -16,37 +16,37 @@ export class ListarMatriculaComponent implements OnInit {
    this.cargarMatricula();
   }
   cargarMatricula(){
-    this.matriculaService.listar().subscribe((data: Matricula[])=>{
-      console.log(data);
-      this.matriculas = data;
-    });
+    // this.matriculaService.listar().subscribe((data: Matricula[])=>{
+    //   console.log(data);
+    //   this.matriculas = data;
+    // });
   }
   borrar(id: number): void {
-    Swal.fire({
-      title: '¿Estás seguro?',
-      text: 'No hay vuelta atrás',
-      icon: 'warning',
-      showCancelButton: true,
-      confirmButtonText: 'Sip',
-      cancelButtonText: 'Nops'
-    }).then((result) => {
-      if (result.value) {
-        this.matriculaService.delete(id).subscribe(res => this.cargarMatricula());
-        Swal.fire(
-          'OK',
-          'Matricula eliminada',
-          'success'
-        );
-      // For more information about handling dismissals please visit
-      // https://sweetalert2.github.io/#handling-dismissals
-      } else if (result.dismiss === Swal.DismissReason.cancel) {
-        Swal.fire(
-          'Cancelado',
-          'Matricula a salvo',
-          'error'
-        );
-      }
-    });
+    // Swal.fire({
+    //   title: '¿Estás seguro?',
+    //   text: 'No hay vuelta atrás',
+    //   icon: 'warning',
+    //   showCancelButton: true,
+    //   confirmButtonText: 'Sip',
+    //   cancelButtonText: 'Nops'
+    // }).then((result) => {
+    //   if (result.value) {
+    //     this.matriculaService.delete(id).subscribe(res => this.cargarMatricula());
+    //     Swal.fire(
+    //       'OK',
+    //       'Matricula eliminada',
+    //       'success'
+    //     );
+    //   // For more information about handling dismissals please visit
+    //   // https://sweetalert2.github.io/#handling-dismissals
+    //   } else if (result.dismiss === Swal.DismissReason.cancel) {
+    //     Swal.fire(
+    //       'Cancelado',
+    //       'Matricula a salvo',
+    //       'error'
+    //     );
+    //   }
+    // });
   }
 
 }

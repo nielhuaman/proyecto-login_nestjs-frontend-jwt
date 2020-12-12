@@ -131,7 +131,7 @@
                 <img src="../../../assets/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-                <a href="#" class="d-block">Richard Pumapillo</a>
+                <a class="d-block">Richard Pumapillo</a>
             </div>
         </div>
 
@@ -141,7 +141,7 @@
                 <!-- Add icons to the links using the .nav-icon class
              with font-awesome or any other icon font library -->
                 <li class="nav-item has-treeview menu-open">
-                    <a href="#" class="nav-link active">
+                    <a class="nav-link active">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
                             Reportes
@@ -150,13 +150,13 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="./index.html" class="nav-link">
+                            <a [routerLink]="['/dashboard/principal']" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Calendar</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="./index2.html" class="nav-link active">
+                            <a [routerLink]="['/dashboard/principal']" class="nav-link active">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Notas</p>
                             </a>
@@ -164,7 +164,7 @@
                     </ul>
                 </li>
                 <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link">
+                    <a class="nav-link">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
                             Usuario
@@ -173,25 +173,25 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="./index.html" class="nav-link">
+                            <a [routerLink]="['/dashboard/user/new']" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Crear usuario</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="./index2.html" class="nav-link">
+                            <a [routerLink]="['/dashboard/user/list']" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Listar Usuarios</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="./index3.html" class="nav-link">
+                            <a [routerLink]="['/dashboard/user/edit']" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Actualizar Usuario</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="./index3.html" class="nav-link">
+                            <a [routerLink]="['/dashboard/user/delete']" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Eliminar Usuario</p>
                             </a>
@@ -199,7 +199,7 @@
                     </ul>
                 </li>
                 <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link">
+                    <a class="nav-link">
                         <i class="nav-icon fas fa-copy"></i>
                         <p>
                             Matricula
@@ -209,25 +209,31 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="pages/layout/top-nav.html" class="nav-link">
+                            <a [routerLink]="['/dashboard/matricula/new']" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Crear Matricula</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/layout/top-nav.html" class="nav-link">
+                            <a [routerLink]="['/dashboard/matricula/list']" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Listar Matricula</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/layout/boxed.html" class="nav-link">
+                            <a [routerLink]="['/dashboard/matricula/detail']" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Detalle Matricula</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a [routerLink]="['/dashboard/matricula/edit']" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Actualizar Matricula</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/layout/fixed-sidebar.html" class="nav-link">
+                            <a [routerLink]="['/dashboard/matricula/delete']" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Eliminar Matricula Sidebar</p>
                             </a>
@@ -235,7 +241,7 @@
                     </ul>
                 </li>
                 <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link">
+                    <a class="nav-link">
                         <i class="nav-icon fas fa-chart-pie"></i>
                         <p>
                             Curso
@@ -244,27 +250,27 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="pages/charts/chartjs.html" class="nav-link">
+                            <a [routerLink]="['/dashboard/curso/new']" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Crear Curso</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/charts/flot.html" class="nav-link">
+                            <a [routerLink]="['/dashboard/curso/list']" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Listar Curso</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/charts/inline.html" class="nav-link">
+                            <a [routerLink]="['/dashboard/curso/edit']" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Actualizar Curso</p>
+                                <p>Editar Curso</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/charts/inline.html" class="nav-link">
+                            <a [routerLink]="['/dashboard/curso/detail']" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Eliminar Curso</p>
+                                <p>Ver Curso</p>
                             </a>
                         </li>
                     </ul>

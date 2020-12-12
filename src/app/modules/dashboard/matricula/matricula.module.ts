@@ -11,7 +11,8 @@ import { ListarMatriculaComponent } from './listar-matricula/listar-matricula.co
 
 
 @NgModule({
-  declarations: [CreateMatriculaComponent, DetalleMatriculaComponent, EditarMatriculaComponent, EliminarMatriculaComponent, ListarMatriculaComponent],
+  declarations: [CreateMatriculaComponent, DetalleMatriculaComponent, EditarMatriculaComponent, EliminarMatriculaComponent,
+    ListarMatriculaComponent],
   imports: [
     CommonModule,
     MatriculaRoutingModule,

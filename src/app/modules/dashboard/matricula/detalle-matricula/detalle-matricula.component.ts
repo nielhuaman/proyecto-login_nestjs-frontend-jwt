@@ -11,27 +11,28 @@ import { MatriculaService } from 'src/app/services/matricula.service';
 })
 export class DetalleMatriculaComponent implements OnInit {
   matricula!: Matricula;
-  constructor(  private  matriculaService: MatriculaService,
-    private activatedRoute: ActivatedRoute,
-    private toastr: ToastrService,
-    private router: Router) { }
+  // constructor(  private  matriculaService: MatriculaService,
+  //   private activatedRoute: ActivatedRoute,
+  //   private toastr: ToastrService,
+  //   private router: Router) { }
+
 
   ngOnInit(): void {
-    const id = this.activatedRoute.snapshot.params.id;
-    this.matriculaService.detail(id).subscribe(
-      data => {
-        this.matricula = data;
-      },
-      err => {
-        this.toastr.error(err.error.message, 'Fail', {
-          timeOut: 3000,  positionClass: 'toast-top-center',
-        });
-        this.volver();
-      }
-    );
+    // const id = this.activatedRoute.snapshot.params.id;
+    // this.matriculaService.detail(id).subscribe(
+    //   data => {
+    //     this.matricula = data;
+    //   },
+    //   err => {
+    //     this.toastr.error(err.error.message, 'Fail', {
+    //       timeOut: 3000,  positionClass: 'toast-top-center',
+    //     });
+    //     this.volver();
+    //   }
+    // );
   }
   volver(): void {
-    this.router.navigate(['/enrollment']);
+    // this.router.navigate(['/enrollment']);
   }
 
 }

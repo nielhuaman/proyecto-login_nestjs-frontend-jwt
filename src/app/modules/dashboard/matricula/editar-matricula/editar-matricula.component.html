@@ -5,15 +5,15 @@
             <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
                 <div class="form-group">
                     <label for="nombre">Codigo alumno</label>
-                    <input type="text" class="form-control" id="codalumno" name="codalumno" [(ngModel)]="matricula.codalumno" required autocomplete="off">
+                    <!-- <input type="text" class="form-control" id="codalumno" name="codalumno" [(ngModel)]="matricula.codalumno" required autocomplete="off"> -->
                 </div>
                 <div class="form-group">
                     <label for="precio">Fecha y hora del registro</label>
-                    <input type="number" class="form-control" id="fechahora_registro" name="fechahora_registro" [(ngModel)]="matricula.fechahora_registro" required autocomplete="off">
+                    <!-- <input type="number" class="form-control" id="fechahora_registro" name="fechahora_registro" [(ngModel)]="matricula.fechahora_registro" required autocomplete="off"> -->
                 </div>
                 <div class="form-group">
                     <label for="text">Periodo académico</label>
-                    <input type="text" class="form-control" id="periodo_academico" name="periodo_academico" [(ngModel)]="matricula.periodo_academico" required autocomplete="off">
+                    <!-- <input type="text" class="form-control" id="periodo_academico" name="periodo_academico" [(ngModel)]="matricula.periodo_academico" required autocomplete="off"> -->
                 </div>
                 <button class="btn btn-outline-success btn-block" [disabled]="!f.valid">
                     <i class="fas fa-edit"></i> Actualizar</button>
