@@ -67,9 +67,9 @@ export class AuthenticationService {
     ).pipe(
       map((resp) => {
 
-        const propiedadesResp = Object.getOwnPropertyNames(resp);
-        const valorIdToken = (resp.hasOwnProperty('idToken')) ? Object.values(resp)[propiedadesResp.indexOf('idToken')] : '';
-        this.guardarToken(valorIdToken);
+        // const propiedadesResp = Object.getOwnPropertyNames(resp);
+        // const valorIdToken = (resp.hasOwnProperty('idToken')) ? Object.values(resp)[propiedadesResp.indexOf('idToken')] : '';
+        // this.guardarToken(valorIdToken);
         return resp;
       })
     );
