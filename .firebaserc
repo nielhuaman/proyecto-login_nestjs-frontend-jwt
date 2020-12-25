@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "login-unmsm"
+  },
+  "targets": {
+    "login-unmsm": {
+      "hosting": {
+        "frontend": [
+          "login-unmsm"
+        ]
+      }
+    }
+  }
+}

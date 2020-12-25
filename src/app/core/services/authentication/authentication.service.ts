@@ -15,11 +15,11 @@ export class AuthenticationService {
   private apikey = 'AIzaSyAgPXWCwubawdKbIaKKKoqPjv9dc64VRCo';
 
   userToken: any;
-  //crear usuario
-  //https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=[API_KEY]
+  // crear usuario
+  // https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=[API_KEY]
 
-  //login
-  //https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=[API_KEY]
+  // login
+  // https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=[API_KEY]
 
 
 
@@ -45,6 +45,7 @@ export class AuthenticationService {
     ).pipe(
       map(resp => {
 
+        console.log(resp);
         const propiedadesResp = Object.getOwnPropertyNames(resp);
         const valorIdToken = (resp.hasOwnProperty('idToken')) ? Object.values(resp)[propiedadesResp.indexOf('idToken')] : '';
         this.guardarToken(valorIdToken);

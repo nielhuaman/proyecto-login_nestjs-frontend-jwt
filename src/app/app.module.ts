@@ -4,7 +4,12 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { HttpClientModule } from '@angular/common/http';
-//import { FormsModule } from '@angular/forms';
+// import { FormsModule } from '@angular/forms';
+
+import {AngularFireModule} from '@angular/fire';
+import {AngularFireFunctionsModule} from '@angular/fire/functions';
+import {AngularFirestoreModule} from '@angular/fire/firestore';
+// import [] from '@angular/fire/auth';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -35,6 +40,7 @@ import { NotpagefoundComponent } from './layouts/notpagefound/notpagefound.compo
 // import { ListarMatriculaComponent } from './matricula/listar-matricula/listar-matricula.component';
 // import { EliminarMatriculaComponent } from './matricula/eliminar-matricula/eliminar-matricula.component';
 // import { DetalleMatriculaComponent } from './matricula/detalle-matricula/detalle-matricula.component';
+import { environment } from '../environments/environment.prod';
 
 
 @NgModule({
@@ -65,11 +71,14 @@ import { NotpagefoundComponent } from './layouts/notpagefound/notpagefound.compo
   ],
   imports: [
     BrowserModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireFunctionsModule,
+    AngularFirestoreModule,
     HttpClientModule,
     CommonModule,
-    //FormsModule,
-    //BrowserAnimationsModule,
-    //ToastrModule.forRoot(),
+    // FormsModule,
+    // BrowserAnimationsModule,
+    // ToastrModule.forRoot(),
     AppRoutingModule
   ],
   providers: [interceptorProvider],

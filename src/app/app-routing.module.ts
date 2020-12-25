@@ -63,6 +63,11 @@ const routes: Routes = [
     component: DashboardComponent,
     canActivate: [AuthenticationGuard],
     loadChildren: () => import('./modules/dashboard/dashboard.module').then(m => m.DashboardModule)
+  },
+  {
+    path: '**',
+    pathMatch: 'full',
+    redirectTo: 'welcome'
   }
 ];
 

@@ -1,1 +1,128 @@
 <p>create-user works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <form autocomplete="off" [formGroup]="forma" (ngSubmit)="guardar()">
+                <div>
+                    <div class="form-group row">
+                        <label class="col-2 col-form-label">Codigo</label>
+                        <div class="col">
+                            <input class="form-control" type="text" placeholder="Codigo" formControlName="codigo">
+                            <!-- <small *ngIf="codigoNoValido" class="text-danger">
+                              codigo no valido
+                            </small> -->
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-2 col-form-label" for="tipoUsuario">Tipo Usuario</label>
+                        <div class="col-3 ">
+                            <select class="custom-select" id="tipoUsuario" formControlName="tipoUsuario" [class.is-invalid]="tipoUsuarioNoValido">
+                                <option selected>Choose...</option>
+                                <option value="1 ">Administrador</option>
+                                <option value="2 ">Usuario</option>
+                              </select>
+                        </div>
+                        <small *ngIf="tipoUsuarioNoValido" class="text-danger">
+                          tipo usuario no valido
+                        </small>
+                    </div>
+                    <div class="form-group row ">
+                        <label class="col-2 col-form-label ">Usuario</label>
+                        <div class="col ">
+
+                            <input class="form-control " type="email " placeholder="Nombre de usuario " formControlName="usuario" [class.is-invalid]="usuarioNoValido ">
+                            <small *ngIf="usuarioNoValido " class="text-danger">
+                            Ingrese el usuario.
+                        </small>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-2 col-form-label">Apellido Paterno</label>
+                        <div class="col">
+                            <input class="form-control" type="text" placeholder="Apellido Paterno" formControlName="apellidoPaterno" [class.is-invalid]="apellidoPaternoNoValido">
+                            <small *ngIf="apellidoPaternoNoValido" class="text-danger">
+                                  Ingrese su Apellido Paterno
+                              </small>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-2 col-form-label">ApellidoMaterno</label>
+                        <div class="col">
+                            <input class="form-control" type="text" placeholder="Apellido Materno" formControlName="apellidoMaterno" [class.is-invalid]="apellidoMaternoNoValido">
+                            <small *ngIf="apellidoMaternoNoValido" class="text-danger">
+                                Ingrese su Apellido Materno
+                            </small>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-2 col-form-label">Nombres</label>
+                        <div class="col ">
+                            <input class="form-control" type="text" placeholder="Nombres" formControlName="nombre" [class.is-invalid]="nombreNoValido">
+                            <small *ngIf="nombreNoValido" class="text-danger">
+                                Ingrese 5 letras
+                            </small>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-2 col-form-label">Edad</label>
+                        <div class="col-2">
+                            <input class="form-control" type="number" placeholder="Edad" formControlName="edad" [class.is-invalid]="edadNoValido">
+                            <small *ngIf="edadNoValido" class="text-danger">
+                                Incorrecto campo edad
+                            </small>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-2 col-form-label">Sexo</label>
+                        <div class="col-3">
+
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input " type="radio" id="inlineRadio1" value="M" formControlName="sexo" [class.is-invalid]="sexoNoValido">
+                                <label class="form-check-label " for="inlineRadio1">Masculino</label>
+                            </div>
+                            <div class="form-check form-check-inline ">
+                                <input class="form-check-input" type="radio" id="inlineRadio2" value="F" formControlName="sexo" [class.is-invalid]="sexoNoValido">
+                                <label class="form-check-label" for="inlineRadio2">Femenino</label>
+                            </div>
+                            <small *ngIf="sexoNoValido" class="text-danger">
+                                Seleccione el Sexo
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-2 col-form-label">Correo</label>
+                    <div class="col">
+
+                        <input class="form-control" type="email" placeholder="Correo electrónico" formControlName="correo" [class.is-invalid]="correoNoValido">
+                        <small *ngIf="correoNoValido" class="text-danger">
+                            Ingrese el correo
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-2 col-form-label">&nbsp;</label>
+                    <div class="input-group col">
+                        <button type="submit" class="btn btn-outline-primary btn-block">
+                            Guardar
+                        </button>
+                    </div>
+                </div>
+            </form>
+
+
+            <hr>
+            <pre>
+  Estado del formulario: {{ forma.valid }}
+  <br>
+  Status: {{ forma.status }}
+</pre>
+
+            <pre>
+
+  {{ forma.value | json }}
+
+</pre>
+        </div>
+    </div>
+</div>

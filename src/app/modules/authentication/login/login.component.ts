@@ -1,10 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { LoginUsuarioDto } from '../../../core/models/login-usuario.dto';
 import { NgForm } from '@angular/forms';
-import { AuthenticationService } from '../../../core/services/authentication/authentication.service';
+import { AngularFireFunctions } from '@angular/fire/functions';
 
 import Swal from 'sweetalert2';
+
+import { LoginUsuarioDto } from '../../../core/models/login-usuario.dto';
+import { AuthenticationService } from '../../../core/services/authentication/authentication.service';
+import { first } from 'rxjs/operators';
+
 
 @Component({
   selector: 'app-login',
@@ -16,7 +20,7 @@ export class LoginComponent implements OnInit {
   usuario: LoginUsuarioDto;
   recordarme = false;
 
-  constructor(private router: Router, private auth: AuthenticationService) {
+  constructor(private router: Router, private auth: AuthenticationService, private fns: AngularFireFunctions) {
     this.usuario = new LoginUsuarioDto();
   }
 
@@ -30,6 +34,20 @@ export class LoginComponent implements OnInit {
   }
 
   login(form: NgForm): void {
+
+    console.log('hola clin ek login');
+    const hola = this.fns.httpsCallable('sayHello')({ nombre: 'rosmery' }).pipe(first()).subscribe(
+      resp => {
+        console.log({ resp });
+      }, err => {
+        console.error({ err });
+      }
+    );
+
+
+
+
+
     if (form.invalid) { return; }
 
 
