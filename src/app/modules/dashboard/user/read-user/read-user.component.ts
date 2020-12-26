@@ -85,4 +85,16 @@ export class ReadUserComponent implements OnInit {
     );
   }
 
+  borrarUsuario(item: any): void {
+    console.log('prueba borrar usuario');
+    console.log(item);
+    this.usuarioServices.deleteUsuario(item.codigo);
+  }
+
+  editarUsuario( item: any){
+    console.log('prueba editar usuario');
+    //console.log(content);
+    console.log(item);
+  }
+
 }

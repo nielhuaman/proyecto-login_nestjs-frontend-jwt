@@ -56,8 +56,8 @@
                                                 <td>{{item.tipoUsuario}}</td>
                                                 <td>richard@gmail.com</td>
                                                 <td>
-                                                    <button type="button" class="btn btn-block bg-gradient-success btn-xs">Success</button>
-                                                    <button type="button" class="btn btn-block bg-gradient-danger btn-xs">Danger</button>
+                                                    <button type="button" (click)="editarUsuario(item)" class="btn btn-block bg-gradient-success btn-xs">Editar</button>
+                                                    <button type="button" (click)="borrarUsuario(item)" class="btn btn-block bg-gradient-danger btn-xs">Eliminar</button>
                                                 </td>
                                             </tr>
                                         </tbody>
