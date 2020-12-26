@@ -33,21 +33,17 @@ export class NuevoCursoComponent implements OnInit {
   }
 
   onCreate(): void {
-//     const curso = new Curso(this.codigo, this.codigoProfesor,this.nombre, this.curso, this.numeroCiclo,
-// this.creditos);
-//     this.cursoService.save(curso).subscribe(
-//       data => {
-//         this.toastr.success(data.message, 'OK', {
-//           timeOut: 3000, positionClass: 'toast-top-center'
-//         });
-//         this.volver();
-//       },
-//       err => {
-//         this.toastr.error(err.error.message, 'Fail', {
-//           timeOut: 3000,  positionClass: 'toast-top-center',
-//         });
-//       }
-//     );
+     const curso = new Curso(this.codigo, this.codigoProfesor,this.nombre, this.curso, this.numeroCiclo,
+ this.creditos);
+     this.cursoService.save(curso).subscribe(
+       data => {
+      
+         this.volver();
+       },
+      err => {
+   
+    }
+    );
   }
 
   volver(): void {

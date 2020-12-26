@@ -21,21 +21,21 @@ export class ListarCursoComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    //this.cargarCursos();
+    this.cargarCursos();
 
   }
 
 
   cargarCursos(): void {
-    // this.cursoService.listacurso().subscribe(
-    //   data => {
-    //     this.cursos = data;
-    //     this.listaVacia = undefined;
-    //   },
-    //   err => {
-    //     this.listaVacia = err.error.message;
-    //   }
-    // );
+     this.cursoService.listacurso().subscribe(
+      data => {
+       this.cursos = data;
+         this.listaVacia = undefined;
+     },
+     err => {
+       this.listaVacia = err.error.message;
+      }
+     );
   }
 
   borrar(id: number): void {
