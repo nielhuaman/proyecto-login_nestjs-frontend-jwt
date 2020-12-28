@@ -37,20 +37,20 @@ export class EditarCursoComponent implements OnInit {
   }
 
   onUpdate(): void {
-    // const id = this.activatedRoute.snapshot.params.id;
-    // this.cursoService.update(id, this.curso).subscribe(
-    //   data => {
+     const id = this.activatedRoute.snapshot.params.id;
+     this.cursoService.update(id, this.curso).subscribe(
+       data => {
     //     this.toastr.success(data.message, 'OK', {
-    //       timeOut: 3000, positionClass: 'toast-top-center'
+     //      timeOut: 3000, positionClass: 'toast-top-center'
     //     });
-    //     this.volver();
-    //   },
-    //   err => {
-    //     this.toastr.error(err.error.message, 'Fail', {
-    //       timeOut: 3000,  positionClass: 'toast-top-center',
+         this.volver();
+       },
+       err => {
+   //      this.toastr.error(err.error.message, 'Fail', {
+   //        timeOut: 3000,  positionClass: 'toast-top-center',
     //     });
-    //   }
-    // );
+       }
+     );
   }
 
   volver(): void {

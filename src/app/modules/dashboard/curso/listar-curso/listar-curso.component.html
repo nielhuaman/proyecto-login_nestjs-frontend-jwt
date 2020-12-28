@@ -25,7 +25,7 @@
                 <td>{{curso.creditos}}</td>
                 <td><button class="btn btn-outline-primary" routerLink="/dashboard/curso/detail/{{curso.id}}"><i class="far fa-eye"></i> Ver</button></td>
                 <td><button class="btn btn-outline-warning" routerLink="/dashboard/curso/edit/{{curso.id}}"><i class="far fa-edit"></i> Editar</button></td>
-                <td><button class="btn btn-outline-danger" ><i class="far fa-trash-alt"></i> Eliminar</button></td> 
+                <td><button class="btn btn-outline-danger" (click)="borrar(curso.id)"><i class="far fa-trash-alt"></i> Eliminar</button></td> 
             </tr>
         </tbody>
     </table>

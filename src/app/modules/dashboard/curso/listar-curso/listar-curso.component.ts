@@ -11,7 +11,7 @@ import Swal from 'sweetalert2';
 })
 export class ListarCursoComponent implements OnInit {
   cursos: Curso[] = [];
-  id=0;
+ 
   listaVacia = undefined;
   //isAdmin: boolean;
   constructor(
@@ -39,7 +39,7 @@ export class ListarCursoComponent implements OnInit {
      );
   }
 
-  borrar(id: number): void {
+  borrar(id: number | undefined = 0): void {
      Swal.fire({
        title: '¿Estás seguro?',
        text: 'No hay vuelta atrás',
