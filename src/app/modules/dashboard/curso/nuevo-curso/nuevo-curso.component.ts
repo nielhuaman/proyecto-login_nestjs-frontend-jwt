@@ -38,7 +38,7 @@ export class NuevoCursoComponent implements OnInit {
      this.cursoService.save(curso).subscribe(
        data => {
       
-         this.volver();
+        this.router.navigate(['dashboard/curso/list']);
        },
       err => {
    
@@ -47,6 +47,6 @@ export class NuevoCursoComponent implements OnInit {
   }
 
   volver(): void {
-    this.router.navigate(['/curso-lista']);
+    this.router.navigate(['dashboard/curso/list']);
   }
 }

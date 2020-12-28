@@ -11,7 +11,7 @@ const routes: Routes = [
     component: ListarCursoComponent
   },
   {
-    path: 'edit',
+    path: 'edit/:id',
     component: EditarCursoComponent
   },
   {
@@ -23,7 +23,7 @@ const routes: Routes = [
     component: NuevoCursoComponent
   },
   {
-    path: 'detail',
+    path: 'detail/:id',
     component: VerCursoComponent
   },
   {

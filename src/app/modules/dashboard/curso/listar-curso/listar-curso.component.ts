@@ -11,6 +11,7 @@ import Swal from 'sweetalert2';
 })
 export class ListarCursoComponent implements OnInit {
   cursos: Curso[] = [];
+  id=0;
   listaVacia = undefined;
   //isAdmin: boolean;
   constructor(
@@ -39,31 +40,31 @@ export class ListarCursoComponent implements OnInit {
   }
 
   borrar(id: number): void {
-    // Swal.fire({
-    //   title: '¿Estás seguro?',
-    //   text: 'No hay vuelta atrás',
-    //   icon: 'warning',
-    //   showCancelButton: true,
-    //   confirmButtonText: 'Sip',
-    //   cancelButtonText: 'Nops'
-    // }).then((result) => {
-    //   if (result.value) {
-    //     this.cursoService.delete(id).subscribe(res => this.cargarCursos());
-    //     Swal.fire(
-    //       'OK',
-    //       'Curso eliminado',
-    //       'success'
-    //     );
-    //   // For more information about handling dismissals please visit
-    //   // https://sweetalert2.github.io/#handling-dismissals
-    //   } else if (result.dismiss === Swal.DismissReason.cancel) {
-    //     Swal.fire(
-    //       'Cancelado',
-    //       'Curso a salvo',
-    //       'error'
-    //     );
-    //   }
-    // });
+     Swal.fire({
+       title: '¿Estás seguro?',
+       text: 'No hay vuelta atrás',
+       icon: 'warning',
+       showCancelButton: true,
+       confirmButtonText: 'Sip',
+      cancelButtonText: 'Nops'
+     }).then((result) => {
+       if (result.value) {
+         this.cursoService.delete(id).subscribe(res => this.cargarCursos());
+         Swal.fire(
+           'OK',
+           'Curso eliminado',
+           'success'
+         );
+       // For more information about handling dismissals please visit
+      // https://sweetalert2.github.io/#handling-dismissals
+     } else if (result.dismiss === Swal.DismissReason.cancel) {
+         Swal.fire(
+           'Cancelado',
+           'Curso a salvo',
+          'error'
+        );
+       }
+     });
   }
 
 }
