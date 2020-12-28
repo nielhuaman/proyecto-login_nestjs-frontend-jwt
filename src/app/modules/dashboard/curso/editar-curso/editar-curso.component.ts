@@ -11,50 +11,50 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class EditarCursoComponent implements OnInit {
 
-  //curso: Curso;
+  curso!: Curso;
 
 
-  // constructor(
-  //   private cursoService: CursoService,
-  //   private activatedRoute: ActivatedRoute,
-  //   private toastr: ToastrService,
-  //   private router: Router
-  // ) { }
+  constructor(
+    private cursoService: CursoService,
+   private activatedRoute: ActivatedRoute,
+  //  private toastr: ToastrService,
+     private router: Router
+   ) { }
 
   ngOnInit(): void {
-    // const id = this.activatedRoute.snapshot.params.id;
-    // this.cursoService.detail(id).subscribe(
-    //   data => {
-    //     this.curso = data;
-    //   },
-    //   err => {
+     const id = this.activatedRoute.snapshot.params.id;
+     this.cursoService.detail(id).subscribe(
+      data => {
+         this.curso = data;
+      },
+       err => {
     //     this.toastr.error(err.error.message, 'Fail', {
     //       timeOut: 3000,  positionClass: 'toast-top-center',
     //     });
-    //     this.volver();
-    //   }
-    // );
+         this.volver();
+       }
+     );
   }
 
   onUpdate(): void {
-    // const id = this.activatedRoute.snapshot.params.id;
-    // this.cursoService.update(id, this.curso).subscribe(
-    //   data => {
+     const id = this.activatedRoute.snapshot.params.id;
+     this.cursoService.update(id, this.curso).subscribe(
+       data => {
     //     this.toastr.success(data.message, 'OK', {
-    //       timeOut: 3000, positionClass: 'toast-top-center'
+     //      timeOut: 3000, positionClass: 'toast-top-center'
     //     });
-    //     this.volver();
-    //   },
-    //   err => {
-    //     this.toastr.error(err.error.message, 'Fail', {
-    //       timeOut: 3000,  positionClass: 'toast-top-center',
+         this.volver();
+       },
+       err => {
+   //      this.toastr.error(err.error.message, 'Fail', {
+   //        timeOut: 3000,  positionClass: 'toast-top-center',
     //     });
-    //   }
-    // );
+       }
+     );
   }
 
   volver(): void {
-    // this.router.navigate(['/curso-lista']);
+   this.router.navigate(['dashboard/curso/list']);
   }
 
 

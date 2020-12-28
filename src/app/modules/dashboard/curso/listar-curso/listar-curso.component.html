@@ -9,9 +9,9 @@
                 <th scope="col">Curso</th>
                 <th scope="col">N° Ciclo</th>
                 <th scope="col">Creditos</th>
-                <!-- <th scope="col" *ngIf="isAdmin">Ver</th>
-                <th scope="col" *ngIf="isAdmin">Editar</th>
-                <th scope="col" *ngIf="isAdmin">Borrar</th> -->
+             <th scope="col" >Ver</th>
+                <th scope="col" >Editar</th>
+                <th scope="col" >Borrar</th> 
             </tr>
         </thead>
         <tbody>
@@ -23,9 +23,9 @@
                 <td>{{curso.curso}}</td>
                 <td>{{curso.numero_ciclo}}</td>
                 <td>{{curso.creditos}}</td>
-                <!-- <td><button class="btn btn-outline-primary" routerLink="/curso-ver/{{curso.id}}"><i class="far fa-eye"></i> Ver</button></td> -->
-                <!-- <td *ngIf="isAdmin"><button class="btn btn-outline-warning" routerLink="/curso/{{curso.id}}"><i class="far fa-edit"></i> Editar</button></td> -->
-                <!-- <td *ngIf="isAdmin"><button class="btn btn-outline-danger" (click)="borrar(curso.id)"><i class="far fa-trash-alt"></i> Eliminar</button></td> -->
+                <td><button class="btn btn-outline-primary" routerLink="/dashboard/curso/detail/{{curso.id}}"><i class="far fa-eye"></i> Ver</button></td>
+                <td><button class="btn btn-outline-warning" routerLink="/dashboard/curso/edit/{{curso.id}}"><i class="far fa-edit"></i> Editar</button></td>
+                <td><button class="btn btn-outline-danger" (click)="borrar(curso.id)"><i class="far fa-trash-alt"></i> Eliminar</button></td> 
             </tr>
         </tbody>
     </table>
