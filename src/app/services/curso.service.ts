@@ -16,7 +16,7 @@ export class CursoService {
     return this.httpClient.get<Curso[]>(`${this.cursoURL}`);
   }
 
-  public detail(id: number): Observable<Curso> {
+  public detail(id: number ): Observable<Curso> {
     return this.httpClient.get<Curso>(`${this.cursoURL}${id}`);
   }
 
