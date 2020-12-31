@@ -56,7 +56,7 @@
                                                 <td>{{item.tipoUsuario}}</td>
                                                 <td>richard@gmail.com</td>
                                                 <td>
-                                                    <button type="button" (click)="editarUsuario(item)" class="btn btn-block bg-gradient-success btn-xs">Editar</button>
+                                                    <button type="button" [routerLink]="['/dashboard/user/edit', item ]" class="btn btn-block bg-gradient-success btn-xs">Editar</button>
                                                     <button type="button" (click)="borrarUsuario(item)" class="btn btn-block bg-gradient-danger btn-xs">Eliminar</button>
                                                 </td>
                                             </tr>
