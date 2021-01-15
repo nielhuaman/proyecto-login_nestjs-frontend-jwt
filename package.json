@@ -26,14 +26,15 @@
     "@ngrx/store": "^10.1.0",
     "@ngrx/store-devtools": "^10.1.0",
     "admin-lte": "^3.0.5",
+    "bootstrap": "^4.5.3",
     "faker": "^5.1.0",
+    "firebase": "^7.0 || ^8.0",
     "json-server": "^0.16.3",
     "ngx-toastr": "^13.0.0",
     "rxjs": "~6.6.0",
     "sweetalert2": "^10.12.4",
     "tslib": "^2.0.0",
-    "zone.js": "~0.10.2",
-    "firebase": "^7.0 || ^8.0"
+    "zone.js": "~0.10.2"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.1100.1",
