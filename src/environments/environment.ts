@@ -14,7 +14,7 @@ export const environment = {
     appId: '1:23629937743:web:533080136c894ba9a13e3a',
     measurementId: 'G-7FTHE86RB6'
   },
-  cursoURL: 'http://localhost:8080/cursos/',
+  cursoURL: 'https://unmsm-matricula-cursos-nestjs.mybluemix.net/cursos/',
   productoURL: 'http://localhost:8080/producto/',
   authURL: 'http://localhost:8080/auth/',
   matriculaURL: 'http://localhost:3000/enrollments',
