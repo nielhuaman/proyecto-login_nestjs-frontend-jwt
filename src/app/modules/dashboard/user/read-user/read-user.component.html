@@ -33,7 +33,7 @@
                                         <thead>
                                             <tr role="row">
                                                 <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Codigo: activate to sort column descending">Codigo</th>
-                                                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Usuario: activate to sort column ascending">Usuario</th>
+                                                <!-- <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Usuario: activate to sort column ascending">Usuario</th> -->
                                                 <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Apellido Paterno: activate to sort column ascending">Apellido Paterno</th>
                                                 <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Apellido Materno: activate to sort column ascending">Apellido Materno</th>
                                                 <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Nombre: activate to sort column ascending">Nombre</th>
@@ -47,30 +47,30 @@
                                         <tbody>
                                             <tr *ngFor="let item of usuarios">
                                                 <td>{{item.codigo}}</td>
-                                                <td>{{item.usuario}}</td>
-                                                <td>{{item.apellidoPaterno}}</td>
-                                                <td>{{item.apellidoMaterno}}</td>
+                                                <!-- <td>{{item.usuario}}</td> -->
+                                                <td>{{item.apePaterno}}</td>
+                                                <td>{{item.apeMaterno}}</td>
                                                 <td>{{item.nombres}}</td>
                                                 <td>{{item.edad}}</td>
                                                 <td>{{item.sexo}}</td>
-                                                <td>{{item.tipoUsuario}}</td>
-                                                <td>richard@gmail.com</td>
+                                                <td>{{item.idTipoUsuario}}</td>
+                                                <td>{{item.email}}</td>
                                                 <td>
-                                                    <button type="button" [routerLink]="['/dashboard/user/edit', item ]" class="btn btn-block bg-gradient-success btn-xs">Editar</button>
-                                                    <button type="button" (click)="borrarUsuario(item)" class="btn btn-block bg-gradient-danger btn-xs">Eliminar</button>
+                                                    <button type="button" (click)="editarUsuario(item.codigo)" class="btn btn-block bg-gradient-success btn-xs">Editar</button>
+                                                    <button type="button" (click)="borrarUsuario(item.codigo)" class="btn btn-block bg-gradient-danger btn-xs">Eliminar</button>
                                                 </td>
                                             </tr>
                                         </tbody>
                                         <tfoot>
                                             <tr>
                                                 <th rowspan="1" colspan="1">Codigo</th>
-                                                <th rowspan="1" colspan="1">Usuario</th>
+                                                <!-- <th rowspan="1" colspan="1">Usuario</th> -->
                                                 <th rowspan="1" colspan="1">Apellido Paterno</th>
                                                 <th rowspan="1" colspan="1">Apellido Materno</th>
                                                 <th rowspan="1" colspan="1">Nombre</th>
                                                 <th rowspan="1" colspan="1">Edad</th>
                                                 <th rowspan="1" colspan="1">Sexo</th>
-                                                <th rowspan="1" colspan="1">Tipo Estudiante</th>
+                                                <th rowspan="1" colspan="1">Tipo Usuario</th>
                                                 <th rowspan="1" colspan="1">Correo</th>
                                                 <th rowspan="1" colspan="1">Operacion</th>
                                             </tr>

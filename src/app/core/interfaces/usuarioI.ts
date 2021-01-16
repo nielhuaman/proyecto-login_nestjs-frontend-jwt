@@ -1,11 +1,12 @@
 export interface UsuarioI {
 
+
   codigo: string;
-  tipoUsuario: string;
-  usuario: string;
-  apellidoPaterno: string;
-  apellidoMaterno: string;
+  idTipoUsuario: string;
+  apePaterno: string;
+  apeMaterno: string;
   nombres: string;
   edad: number;
+  email: any;
   sexo: string;
 }

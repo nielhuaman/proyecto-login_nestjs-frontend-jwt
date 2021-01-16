@@ -22,7 +22,6 @@ export class CreateUserComponent implements OnInit {
     this.forma = this.fb.group({
       codigo: [''],
       tipoUsuario: ['', [Validators.required]],
-      usuario: ['', [Validators.required]],
       nombre: ['', [Validators.required]],
       apellidoPaterno: ['', [Validators.required]],
       apellidoMaterno: ['', [Validators.required]],
@@ -48,10 +47,10 @@ export class CreateUserComponent implements OnInit {
     return (campo === null) ? false : campo?.invalid && campo.touched;
   }
 
-  get usuarioNoValido(): boolean {
-    const campo = this.forma.get('usuario');
-    return (campo === null) ? false : campo.invalid && campo.touched;
-  }
+  // get usuarioNoValido(): boolean {
+  //   const campo = this.forma.get('usuario');
+  //   return (campo === null) ? false : campo.invalid && campo.touched;
+  // }
 
   get nombreNoValido(): boolean {
     const campo = this.forma.get('nombre');
@@ -111,46 +110,60 @@ export class CreateUserComponent implements OnInit {
     });
     Swal.showLoading();
 
-    this.usuario.tipoUsuario = this.forma.get('tipoUsuario')?.value;
-    this.usuario.usuario = this.forma.get('usuario')?.value;
-    this.usuario.apellidoPaterno = this.forma.get('apellidoPaterno')?.value;
-    this.usuario.apellidoMaterno = this.forma.get('apellidoMaterno')?.value;
+    this.usuario.idTipoUsuario = this.forma.get('tipoUsuario')?.value;
+    this.usuario.apePaterno = this.forma.get('apellidoPaterno')?.value;
+    this.usuario.apeMaterno = this.forma.get('apellidoMaterno')?.value;
     this.usuario.nombres = this.forma.get('nombre')?.value;
     this.usuario.edad = this.forma.get('edad')?.value;
     this.usuario.sexo = this.forma.get('sexo')?.value;
-
+    this.usuario.email= this.forma.get('correo')?.value;
+    this.usuario.codigo= this.forma.get('codigo')?.value;
+    console.log("el usuario a enviar es");
     console.log(JSON.stringify(this.usuario));
     const constUsuarioString = JSON.stringify(this.usuario);
     const data = JSON.parse(constUsuarioString);
 
-    // this.usuarioService.crearUsuario(this.usuario).subscribe(resp => {
-    //   console.log(resp);
-    // });
-    // const data = { nombre: 'rous', apellido: 'ccorahua' };
-    this.usuarioService.crearUsuario(data).then(() => {
-      console.log('creando usario');
-      Swal.close();
-      this.forma.reset();
+
+    this.usuarioService.crearUsuario(this.usuario).subscribe(
+      data => {
+
+        //this.router.navigate(['dashboard/curso/list']);
+        console.log("creado con exito usiario");
+        console.log(data);
+        Swal.close();
+        this.forma.reset();
 
       Swal.fire({
         icon: 'success',
         title: 'Usuario creado con exito.'
       });
 
+       },
+      err => {
 
-    }, (error) => {
-      console.log(error);
-      Swal.fire({
-        title: 'Error al autenticar!',
-        text: error.error.error.message,
-        icon: 'error'
-      });
-    });
+    }
+    );
 
-    // Posteo de información
-    // this.forma.reset({
-    //   nombre: 'Sin nombre'
+    // this.usuarioService.crearUsuario(data).then(() => {
+    //   console.log('creando usario');
+    //   Swal.close();
+    //   this.forma.reset();
+
+    //   Swal.fire({
+    //     icon: 'success',
+    //     title: 'Usuario creado con exito.'
+    //   });
+
+
+    // }, (error) => {
+    //   console.log(error);
+    //   Swal.fire({
+    //     title: 'Error al autenticar!',
+    //     text: error.error.error.message,
+    //     icon: 'error'
+    //   });
     // });
+
 
   }
 

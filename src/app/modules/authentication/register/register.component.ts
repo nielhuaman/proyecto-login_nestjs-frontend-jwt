@@ -6,6 +6,8 @@ import Swal from 'sweetalert2';
 
 import { LoginUsuarioDto } from '../../../core/models/login-usuario.dto';
 import { AuthenticationService } from '../../../core/services/authentication/authentication.service';
+import { UsuarioDto } from '../../../core/models/usuario.dto';
+import { UserService } from '../../../core/services/user/user.service';
 
 
 @Component({
@@ -16,14 +18,24 @@ import { AuthenticationService } from '../../../core/services/authentication/aut
 export class RegisterComponent implements OnInit {
 
 
-  usuario!: LoginUsuarioDto;
+  usuarioLoginDto!: LoginUsuarioDto;
+  usuarioDto!:UsuarioDto;
   recordarme = false;
+  dataSexo: any[]=[];
+  dataTipoUsuario: any[]=[];
+  valorToken: string;
 
-  constructor(private router: Router, private auth: AuthenticationService) {
-    this.usuario = new LoginUsuarioDto();
+
+  constructor(private router: Router, private auth: AuthenticationService, private usuarioService:UserService) {
+    this.usuarioLoginDto = new LoginUsuarioDto();
+    this.usuarioDto = new UsuarioDto();
+    this.dataSexo =[{nombre:"Femenino",valor:"FEMENINO"},{nombre:"Masculino",valor:"MASCULINO"}];
+    this.dataTipoUsuario =[{nombre:"Profesor",valor:"1"},{nombre:"Alumno",valor:"2"},{nombre:"Administrador",valor:"3"}];
+    this.valorToken="";
   }
 
   ngOnInit(): void {
+
 
   }
 
@@ -38,12 +50,24 @@ export class RegisterComponent implements OnInit {
     });
     Swal.showLoading();
 
-    this.auth.nuevoUsuario(this.usuario)
+    this.auth.nuevoUsuario(this.usuarioLoginDto)
       .subscribe(resp => {
+        this.usuarioDto.email=resp.email;
+        this.usuarioDto.codigo=resp.localId;
+
+        console.log("el resp es");
         console.log(resp);
+        this.valorToken=resp.idToken;
+        console.log("el valor de valorToken es" );
+        console.log(this.valorToken);
+
+        //this.registroUsuario(this.valorToken);
+
+
+
         Swal.close();
         if (this.recordarme) {
-          localStorage.setItem('email', this.usuario.email);
+          localStorage.setItem('email', this.usuarioLoginDto.email);
         }
         this.router.navigateByUrl('/auth/login');
       }, (err) => {
@@ -56,4 +80,18 @@ export class RegisterComponent implements OnInit {
       });
   }
 
-}
+  registroUsuario(valorToken:string){
+
+    this.usuarioService.crearUsuario(this.usuarioDto).subscribe(
+          data => {
+
+            console.log("creado con exito el usurio en bd");
+            console.log(data);
+          },
+          err => {
+            console.log("error en crear el usurio en bd");
+            console.log(err);
+          }
+        );
+      }
+  }

@@ -18,6 +18,7 @@ export const environment = {
   productoURL: 'http://localhost:8080/producto/',
   authURL: 'http://localhost:8080/auth/',
   matriculaURL: 'http://localhost:3000/enrollments',
+  usuarioURL:'https://unmsm-matricula-usuarios-nestjs.mybluemix.net/usuarios/'
 };
 
 /*

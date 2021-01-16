@@ -3,7 +3,6 @@ export class LoginUsuarioDto implements LoginUsuarioI{
 
   email!: any;
   password!: string;
-  tipoUsuario!: string;
 
   // constructor(email: string, password: string, tipoUsuario: string) {
   //   this.email = email;
@@ -11,5 +10,6 @@ export class LoginUsuarioDto implements LoginUsuarioI{
   //   this.tipoUsuario = tipoUsuario;
   // }
   constructor(){}
+
 
 }

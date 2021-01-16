@@ -4,6 +4,7 @@ import { CreateUserComponent } from './create-user/create-user.component';
 import { ReadUserComponent } from './read-user/read-user.component';
 import { DeleteUserComponent } from './delete-user/delete-user.component';
 import { EditUserComponent } from './edit-user/edit-user.component';
+import { PerfilUserComponent } from './perfil-user/perfil-user.component';
 
 const routes: Routes = [
   {
@@ -19,12 +20,16 @@ const routes: Routes = [
     component: DeleteUserComponent
   },
   {
-    path: 'edit',
+    path: 'edit/:id',
     component: EditUserComponent
   },
   {
     path: 'list',
     component: ReadUserComponent
+  },
+  {
+    path: 'perfil',
+    component: PerfilUserComponent
   },
   {
     path: '**',

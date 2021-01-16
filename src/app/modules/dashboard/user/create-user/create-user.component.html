@@ -18,23 +18,14 @@
                         <div class="col-3 ">
                             <select class="custom-select" id="tipoUsuario" formControlName="tipoUsuario" [class.is-invalid]="tipoUsuarioNoValido">
                                 <option selected>Choose...</option>
-                                <option value="1 ">Administrador</option>
-                                <option value="2 ">Usuario</option>
+                                <option value="1">Profesor</option>
+                                <option value="2">Alumno</option>
+                                <option value="3">Administrador</option>
                               </select>
                         </div>
                         <small *ngIf="tipoUsuarioNoValido" class="text-danger">
                           tipo usuario no valido
                         </small>
-                    </div>
-                    <div class="form-group row ">
-                        <label class="col-2 col-form-label ">Usuario</label>
-                        <div class="col ">
-
-                            <input class="form-control " type="email " placeholder="Nombre de usuario " formControlName="usuario" [class.is-invalid]="usuarioNoValido ">
-                            <small *ngIf="usuarioNoValido " class="text-danger">
-                            Ingrese el usuario.
-                        </small>
-                        </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-2 col-form-label">Apellido Paterno</label>
@@ -77,11 +68,11 @@
                         <div class="col-3">
 
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input " type="radio" id="inlineRadio1" value="M" formControlName="sexo" [class.is-invalid]="sexoNoValido">
+                                <input class="form-check-input " type="radio" id="inlineRadio1" value="MASCULINO" formControlName="sexo" [class.is-invalid]="sexoNoValido">
                                 <label class="form-check-label " for="inlineRadio1">Masculino</label>
                             </div>
                             <div class="form-check form-check-inline ">
-                                <input class="form-check-input" type="radio" id="inlineRadio2" value="F" formControlName="sexo" [class.is-invalid]="sexoNoValido">
+                                <input class="form-check-input" type="radio" id="inlineRadio2" value="FEMENINO" formControlName="sexo" [class.is-invalid]="sexoNoValido">
                                 <label class="form-check-label" for="inlineRadio2">Femenino</label>
                             </div>
                             <small *ngIf="sexoNoValido" class="text-danger">
