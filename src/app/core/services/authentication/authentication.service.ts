@@ -15,6 +15,8 @@ export class AuthenticationService {
   private apikey = 'AIzaSyAgPXWCwubawdKbIaKKKoqPjv9dc64VRCo';
 
   userToken: any;
+  userIdUser: any;
+  userEmail: any;
   // crear usuario
   // https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=[API_KEY]
 
@@ -25,11 +27,15 @@ export class AuthenticationService {
 
   constructor(private http: HttpClient) {
     this.userToken = '';
+    this.userIdUser='';
+    this.userEmail='';
     this.leerToken();
   }
 
   logout() {
     localStorage.removeItem('token');
+    localStorage.removeItem('idUser');
+    localStorage.removeItem('userEmail');
   }
 
   login(usuario: LoginUsuarioDto): Observable<any> {
@@ -48,7 +54,11 @@ export class AuthenticationService {
         console.log(resp);
         const propiedadesResp = Object.getOwnPropertyNames(resp);
         const valorIdToken = (resp.hasOwnProperty('idToken')) ? Object.values(resp)[propiedadesResp.indexOf('idToken')] : '';
+        const valorIdUsuario=(resp.hasOwnProperty('localId')) ? Object.values(resp)[propiedadesResp.indexOf('localId')] : '';
+        const valorEmail=(resp.hasOwnProperty('email')) ? Object.values(resp)[propiedadesResp.indexOf('email')] : '';
         this.guardarToken(valorIdToken);
+        this.guardarLocalId(valorIdUsuario);
+        this.guardarEmail(valorEmail);
         return resp;
       })
     );
@@ -81,6 +91,32 @@ export class AuthenticationService {
 
     this.userToken = idToken;
     localStorage.setItem('token', idToken);
+    //localStorage.setItem();
+
+    const hoy = new Date();
+    hoy.setSeconds(3600);
+
+    localStorage.setItem('expira', hoy.getTime().toString());
+  }
+
+  private guardarLocalId(idUsuario: string): void {
+
+    this.userIdUser = idUsuario;
+    localStorage.setItem('idUser', idUsuario);
+    //localStorage.setItem();
+
+    const hoy = new Date();
+    hoy.setSeconds(3600);
+
+    localStorage.setItem('expira', hoy.getTime().toString());
+  }
+
+
+  private guardarEmail(email: string): void {
+
+    this.userEmail = email;
+    localStorage.setItem('userEmail', email);
+    //localStorage.setItem();
 
     const hoy = new Date();
     hoy.setSeconds(3600);

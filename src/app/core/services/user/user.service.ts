@@ -48,7 +48,7 @@ export class UserService {
     return this.httpClient.delete<any>(`${this.usuarioURL}${id}`);
   }
 
-  detail(codigo: number ) {
+  detail(codigo: string ) {
     return this.httpClient.get<UsuarioDto>(`${this.usuarioURL}${codigo}`);
   }
 }
